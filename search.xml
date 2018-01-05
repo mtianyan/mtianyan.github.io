@@ -9,8 +9,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>TravisCI</tag>
         <tag>环境搭建</tag>
+        <tag>TravisCI</tag>
       </tags>
   </entry>
   <entry>
@@ -22,8 +22,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>学习笔记</tag>
         <tag>进阶学习</tag>
+        <tag>学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -45,14 +45,14 @@
     <content type="text"><![CDATA[工欲利器事必先善其器 对于Python环境搭建的指南，分为普通版和进阶版。推荐进阶版：Windows下Anaconda2(Python2)和Anaconda3(Python3)的共存 [√] 慕课网Python开发环境搭建: 配开发环境 Python开发环境搭建搭建环境分为两个版本： 基础版，供初学者快速安装体验。 进阶版, 供对于数据科学，机器学习有兴趣者安装。 推荐：安装进阶版，一步到位。 基础版：Windows下安装python环境(2.7 | 3.x) 官网： https://www.python.org/ 安装包下载。选择download下的windows。点击进入。 下图中红框为64位版本。32位版本可以选择Windows x86 executable installer 2.7版本的安装包下载： 安装python。点击下一步下一步进行默认安装即可。（跟平常装个qq啥的没两样） 安装完成的测试。win（即徽标键） + R 输入cmd ：打开命令行。输入python不报错的进入python控制台下。 进阶版：Windows下Anaconda2(Python2)和Anaconda3(Python3)的共存转载 原文地址：http://blog.csdn.net/infin1te/article/details/50445217 Anaconda是一个Python的科学计算发行版，包含了超过300个流行的用于科学、数学、工程和数据分析的Python Packages。由于Python有2和3两个版本，因此Anaconda也在Python2和Python3的基础上推出了两个发行版，即Anaconda2和Anaconda3。 以上文字摘自转载博客。通俗讲就是一个python的各种科学计算包的大合集版本。省去了自己安装大量基本包的过程。 Tips: 3.x版本建议选择Python 3.5.1 |Anaconda 4.1.0 (64-bit) 以后如果要使用python进行TensorFlow windows版的配置可以省下时间。 这是博主自入python坑以来找到的最好的共存方法，没有出过问任何题！！！ 这是博主自入python坑以来找到的最好的共存方法，没有出过问任何题！！！ 这是博主自入python坑以来找到的最好的共存方法，没有出过问任何题！！！ Linux下的python使用。 Linux 默认安装python，建议安装IPython； sudo apt-get install ipython安装Ipython（支持Tab键自动补齐） 使用Vim来创建.py文件 输入python即可查看当前版本 IPython是Python的交互式Shell，提供了代码自动补完，自动缩进，高亮显示，执行Shell命令等非常有用的特性。特别是它的代码补完功能. python文件类型(常识)python执行过程： .py文件 –&gt; python解释器 –&gt; 字节码文件 –&gt; python解释器 –&gt; 二进制文件 –&gt; 内存、运行 –&gt; 打印结果 字节码文件: .pyc转换方式： python -m py_compile xxx.py作用：提高程序的加载速度 .pyo(优化编译的.pyc文件)转换方式： python -O -m py_compile xxx.py作用：提高程序的运行速度 eclipse下的python环境安装。添加python开发环境到eclipse： 点击help——install New Software 点击add，弹出新窗口： Name:填PyDev Location:填 http://pydev.org/updates 确认后会出现 PyDev，勾选Pydev。 pydev for eclipse–&gt; next–&gt; accept–&gt;finish file–&gt; new–&gt; project –&gt;Pydev下 pydevProject python的dev下载地址：http://pydev.org/updates]]></content>
       <tags>
         <tag>Python</tag>
-        <tag>环境搭建</tag>
         <tag>零基础入门</tag>
+        <tag>环境搭建</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Hexo+Next主题搭建博客安装美化及SEO优化指南]]></title>
     <url>%2Fpost%2Fa625fa82.html</url>
-    <content type="text"><![CDATA[做博客最重要的是用心啦 最终成果当然是本站了。安装，美化，SEO推广，部署通通奉上。 持续集成自动部署已提上日程：已完成。 查看持续集成：《用TravisCI持续集成自动部署Hexo博客的个人实践》 Hexo + Next主题 搭建博客 “真”零基础安装配置最终成果: 本站 node.js官网下载: 下一步下一步安装法 node-v8.9.3-x64 C:\softEnvir\nodejs 验证安装: 设置npm下载目录123npm config set prefix D:\softEnvDown\nodejs\node_globalnpm config set cache D:\softEnvDown\nodejs\node_cachenpm config ls npm模块安装的默认全局路径已经改到了相应的文件夹中，但是 这时候用户还是无法require这些模块。因为电脑系统现在还不知道你把默认路径给改了，所以需要在win+R–&gt;“sysdm.cpl–&gt;高级–&gt;环境变量打开设置对话框。 首先在系统变量中新建，新建一个名为NODE_PATH的变量，变量值: 全局模块的文件夹中的node_modules文件夹的绝对路径. 即：D:\softEnvDown\nodejs\node_global\node_modules 配置文件目录：C:\Users\mtian\.npmrc 安装cnpmnpm install -g cnpm --registry=https://registry.npm.taobao.org Git安装Git-2.15.1.2-64-bit（同样官网下载: 下一步下一步安装法） C:\softEnvir\Git hexo-cli: 1.0.4安装cmd控制台下: `npm install -g hexo-cli` 初始化hexo博客目录D:/mtianBlog: hexo init hexoBlog 下载next主题及主题美化官方文档地址： http://theme-next.iissnan.com/ 下载主题next：v5.1.4。名字改为next 然后放入D:\mtianBlog\hexoBlog\themes 123hexo cleanhexo s --debug ####主题美化。 推荐阅读：https://www.jianshu.com/p/f054333ac9e6 部分节选： 圆形头像旋转。 打开\themes\next\source\css\_common\components\sidebar\sidebar-author.styl，在里面添加如下代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960.site-author-image &#123; display: block; margin: 0 auto; padding: $site-author-image-padding; max-width: $site-author-image-width; height: $site-author-image-height; border: $site-author-image-border-width solid $site-author-image-border-color; /* 头像圆形 */ border-radius: 80px; -webkit-border-radius: 80px; -moz-border-radius: 80px; box-shadow: inset 0 -1px 0 #333sf; /* 设置循环动画 [animation: (play)动画名称 (2s)动画播放时长单位秒或微秒 (ase-out)动画播放的速度曲线为以低速结束 (1s)等待1秒然后开始动画 (1)动画播放次数(infinite为循环播放) ]*/ /* 鼠标经过头像旋转360度 */ -webkit-transition: -webkit-transform 1.0s ease-out; -moz-transition: -moz-transform 1.0s ease-out; transition: transform 1.0s ease-out;&#125;img:hover &#123; /* 鼠标经过停止头像旋转 -webkit-animation-play-state:paused; animation-play-state:paused;*/ /* 鼠标经过头像旋转360度 */ -webkit-transform: rotateZ(360deg); -moz-transform: rotateZ(360deg); transform: rotateZ(360deg);&#125;/* Z 轴旋转动画 */@-webkit-keyframes play &#123; 0% &#123; -webkit-transform: rotateZ(0deg); &#125; 100% &#123; -webkit-transform: rotateZ(-360deg); &#125;&#125;@-moz-keyframes play &#123; 0% &#123; -moz-transform: rotateZ(0deg); &#125; 100% &#123; -moz-transform: rotateZ(-360deg); &#125;&#125;@keyframes play &#123; 0% &#123; transform: rotateZ(0deg); &#125; 100% &#123; transform: rotateZ(-360deg); &#125;&#125; 配置百度统计站长版。(官方文档有写) baidu_analytics: * 配置leancloud (官方文档有写) leancloud_visitors: enable: true app_id: * app_key: # 配置搜索(更推荐localSearch) 123456789algolia: applicationID: &apos;*&apos; apiKey: &apos;*&apos; adminApiKey: &apos;*&apos; indexName: &apos;*&apos; chunkSize: 5000$ export(windows 为 set) HEXO_ALGOLIA_INDEXING_KEY=***$ hexo algolia 您好！当我集成Algolia时候一直出错——上传不了记录，请问知道如何解决嘛？ 答案地址：https://github.com/iissnan/theme-next-docs/issues/162 使用gulp进行博文压缩（持续集成自动部署前提）在站点的根目录下执行以下命令： 12$ npm install gulp -g$ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save 新建文件gulpfile.js: 内容为： 123456789101112131415161718192021222324252627282930313233var gulp = require(&apos;gulp&apos;);var minifycss = require(&apos;gulp-minify-css&apos;);var uglify = require(&apos;gulp-uglify&apos;);var htmlmin = require(&apos;gulp-htmlmin&apos;);var htmlclean = require(&apos;gulp-htmlclean&apos;);// 压缩 public 目录 cssgulp.task(&apos;minify-css&apos;, function() &#123; return gulp.src(&apos;./public/**/*.css&apos;) .pipe(minifycss()) .pipe(gulp.dest(&apos;./public&apos;));&#125;);// 压缩 public 目录 htmlgulp.task(&apos;minify-html&apos;, function() &#123; return gulp.src(&apos;./public/**/*.html&apos;) .pipe(htmlclean()) .pipe(htmlmin(&#123; removeComments: true, minifyJS: true, minifyCSS: true, minifyURLs: true, &#125;)) .pipe(gulp.dest(&apos;./public&apos;))&#125;);// 压缩 public/js 目录 jsgulp.task(&apos;minify-js&apos;, function() &#123; return gulp.src(&apos;./public/**/*.js&apos;) .pipe(uglify()) .pipe(gulp.dest(&apos;./public&apos;));&#125;);// 执行 gulp 命令时执行的任务gulp.task(&apos;default&apos;, [ &apos;minify-html&apos;,&apos;minify-css&apos;,&apos;minify-js&apos;]); 部署hexo：npm install hexo-deployer-git --save 修改站点配置文件： 12345deploy: type: git repo: https://github.com/mtianyan/mtianyan.github.io branch: master message: new version first commit 需要使用的命令 123456789git config --global user.email &quot;1147727180@qq.com&quot;git config --global user.name &quot;mtianyan&quot;hexo cleanhexo g &amp;&amp; gulphexo d 将博客源码备份到github或码云(持续集成自动部署前提)12345git initgit add .git remote add origin https://github.com/mtianyan/hexoBlog-Github.gitgit commit -m &quot;first&quot;git push -u origin master 想要弄到码云替换第三行为下面： 1git remote add origin https://gitee.com/mtianyan/hexoBlog-mayun.git SEO优化指南URL唯一化:1npm install hexo-abbrlink --save 站点配置文件里添加: 1234permalink: post/:abbrlink.htmlabbrlink: alg: crc32 # 算法：crc16(default) and crc32 rep: hex # 进制：dec(default) and hex 安装sitemap站点地图生成插件12npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save 在站点配置文件或主题配置文件加入。 1234sitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml 注意缩进 在hexo-site\source中新建文件robots.txt,内容如下，请自行替换 123456789101112131415User-agent: *Allow: /Allow: /archives/Allow: /categories/Allow: /tags/ Allow: /about/ Disallow: /vendors/Disallow: /js/Disallow: /css/Disallow: /fonts/Disallow: /vendors/Disallow: /fancybox/Sitemap: http://mtianyan.gitee.io/sitemap.xmlSitemap: http://mtianyan.gitee.io/baidusitemap.xml Allow后面的就是你的menu 可以在主题配置文件中找到。 前往链接：https://www.google.com/webmasters/添加你的网站。 下载验证文件放入hexo-site\source中 Tips: 站点配置文件忽略Google的验证文件。这样clean的时候就不会被删除了。 123skip_render: - README.md - google*****.html 打开站点地图：添加站点地图。 可以进入站点地图详情查看有没有报错。 robots.txt测试 确保0错误，0警告。 百度搜索资源平台http://ziyuan.baidu.com/ 点击用户中心。站点管理 进行 添加网站操作。 下载验证文件放入hexo-site\source中 验证完成之后点击域名进入控制台。 对于Robots文件进行验证。 点击链接提交，往下多翻点 选择sitemap：填入自己网站的sitemap地址。点击提交 查看状态。 页面关键字优化title 文件路径是your-hexo-site\themes\next\layout\index.swig 将文件中 1&#123;% block title %&#125;&#123;&#123; config.title &#125;&#125;&#123;% if theme.index_with_subtitle and config.subtitle %&#125; - &#123;&#123;config.subtitle &#125;&#125; 改为 1&#123;% block title %&#125;&#123;&#123; config.title &#125;&#125;&#123;% if theme.index_with_subtitle and config.subtitle %&#125; - &#123;&#123;config.subtitle &#125;&#125;&#123;% endif %&#125;&#123;&#123; theme.description &#125;&#125; &#123;% endblock %&#125;]]></content>
+    <content type="text"><![CDATA[做博客最重要的是用心啦 最终成果当然是本站了。安装，美化，SEO推广，部署通通奉上。 持续集成自动部署已提上日程：已完成。 查看持续集成：《用TravisCI持续集成自动部署Hexo博客的个人实践》 Hexo + Next主题 搭建博客 “真”零基础安装配置最终成果: 本站 node.js官网下载: 下一步下一步安装法 node-v8.9.3-x64 C:\softEnvir\nodejs 验证安装: 设置npm下载目录123npm config set prefix D:\softEnvDown\nodejs\node_globalnpm config set cache D:\softEnvDown\nodejs\node_cachenpm config ls npm模块安装的默认全局路径已经改到了相应的文件夹中，但是 这时候用户还是无法require这些模块。因为电脑系统现在还不知道你把默认路径给改了，所以需要在win+R–&gt;“sysdm.cpl–&gt;高级–&gt;环境变量打开设置对话框。 首先在系统变量中新建，新建一个名为NODE_PATH的变量，变量值: 全局模块的文件夹中的node_modules文件夹的绝对路径. 即：D:\softEnvDown\nodejs\node_global\node_modules 配置文件目录：C:\Users\mtian\.npmrc 安装cnpmnpm install -g cnpm --registry=https://registry.npm.taobao.org Git安装Git-2.15.1.2-64-bit（同样官网下载: 下一步下一步安装法） C:\softEnvir\Git hexo-cli: 1.0.4安装cmd控制台下: `npm install -g hexo-cli` 初始化hexo博客目录D:/mtianBlog: hexo init hexoBlog 下载next主题及主题美化官方文档地址： http://theme-next.iissnan.com/ 下载主题next：v5.1.4。名字改为next 然后放入D:\mtianBlog\hexoBlog\themes 123hexo cleanhexo s --debug 主题美化。推荐阅读：https://www.jianshu.com/p/f054333ac9e6 部分节选： 圆形头像旋转。 打开\themes\next\source\css\_common\components\sidebar\sidebar-author.styl，在里面添加如下代码： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960.site-author-image &#123; display: block; margin: 0 auto; padding: $site-author-image-padding; max-width: $site-author-image-width; height: $site-author-image-height; border: $site-author-image-border-width solid $site-author-image-border-color; /* 头像圆形 */ border-radius: 80px; -webkit-border-radius: 80px; -moz-border-radius: 80px; box-shadow: inset 0 -1px 0 #333sf; /* 设置循环动画 [animation: (play)动画名称 (2s)动画播放时长单位秒或微秒 (ase-out)动画播放的速度曲线为以低速结束 (1s)等待1秒然后开始动画 (1)动画播放次数(infinite为循环播放) ]*/ /* 鼠标经过头像旋转360度 */ -webkit-transition: -webkit-transform 1.0s ease-out; -moz-transition: -moz-transform 1.0s ease-out; transition: transform 1.0s ease-out;&#125;img:hover &#123; /* 鼠标经过停止头像旋转 -webkit-animation-play-state:paused; animation-play-state:paused;*/ /* 鼠标经过头像旋转360度 */ -webkit-transform: rotateZ(360deg); -moz-transform: rotateZ(360deg); transform: rotateZ(360deg);&#125;/* Z 轴旋转动画 */@-webkit-keyframes play &#123; 0% &#123; -webkit-transform: rotateZ(0deg); &#125; 100% &#123; -webkit-transform: rotateZ(-360deg); &#125;&#125;@-moz-keyframes play &#123; 0% &#123; -moz-transform: rotateZ(0deg); &#125; 100% &#123; -moz-transform: rotateZ(-360deg); &#125;&#125;@keyframes play &#123; 0% &#123; transform: rotateZ(0deg); &#125; 100% &#123; transform: rotateZ(-360deg); &#125;&#125; 配置百度统计站长版。(官方文档有写) baidu_analytics: * 配置leancloud (官方文档有写) leancloud_visitors: enable: true app_id: * app_key: # 配置搜索(更推荐localSearch) 123456789algolia: applicationID: &apos;*&apos; apiKey: &apos;*&apos; adminApiKey: &apos;*&apos; indexName: &apos;*&apos; chunkSize: 5000$ export(windows 为 set) HEXO_ALGOLIA_INDEXING_KEY=***$ hexo algolia 您好！当我集成Algolia时候一直出错——上传不了记录，请问知道如何解决嘛？ 答案地址：https://github.com/iissnan/theme-next-docs/issues/162 使用gulp进行博文压缩（持续集成自动部署前提）在站点的根目录下执行以下命令： 12$ npm install gulp -g$ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save 新建文件gulpfile.js: 内容为： 123456789101112131415161718192021222324252627282930313233var gulp = require(&apos;gulp&apos;);var minifycss = require(&apos;gulp-minify-css&apos;);var uglify = require(&apos;gulp-uglify&apos;);var htmlmin = require(&apos;gulp-htmlmin&apos;);var htmlclean = require(&apos;gulp-htmlclean&apos;);// 压缩 public 目录 cssgulp.task(&apos;minify-css&apos;, function() &#123; return gulp.src(&apos;./public/**/*.css&apos;) .pipe(minifycss()) .pipe(gulp.dest(&apos;./public&apos;));&#125;);// 压缩 public 目录 htmlgulp.task(&apos;minify-html&apos;, function() &#123; return gulp.src(&apos;./public/**/*.html&apos;) .pipe(htmlclean()) .pipe(htmlmin(&#123; removeComments: true, minifyJS: true, minifyCSS: true, minifyURLs: true, &#125;)) .pipe(gulp.dest(&apos;./public&apos;))&#125;);// 压缩 public/js 目录 jsgulp.task(&apos;minify-js&apos;, function() &#123; return gulp.src(&apos;./public/**/*.js&apos;) .pipe(uglify()) .pipe(gulp.dest(&apos;./public&apos;));&#125;);// 执行 gulp 命令时执行的任务gulp.task(&apos;default&apos;, [ &apos;minify-html&apos;,&apos;minify-css&apos;,&apos;minify-js&apos;]); 部署hexo：npm install hexo-deployer-git --save 修改站点配置文件： 12345deploy: type: git repo: https://github.com/mtianyan/mtianyan.github.io branch: master message: new version first commit 需要使用的命令 123456789git config --global user.email &quot;1147727180@qq.com&quot;git config --global user.name &quot;mtianyan&quot;hexo cleanhexo g &amp;&amp; gulphexo d 将博客源码备份到github或码云(持续集成自动部署前提)12345git initgit add .git remote add origin https://github.com/mtianyan/hexoBlog-Github.gitgit commit -m &quot;first&quot;git push -u origin master 想要弄到码云替换第三行为下面： 1git remote add origin https://gitee.com/mtianyan/hexoBlog-mayun.git SEO优化指南URL唯一化:1npm install hexo-abbrlink --save 站点配置文件里添加: 1234permalink: post/:abbrlink.htmlabbrlink: alg: crc32 # 算法：crc16(default) and crc32 rep: hex # 进制：dec(default) and hex 安装sitemap站点地图生成插件12npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save 在站点配置文件或主题配置文件加入。 1234sitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml 注意缩进 在hexo-site\source中新建文件robots.txt,内容如下，请自行替换 123456789101112131415User-agent: *Allow: /Allow: /archives/Allow: /categories/Allow: /tags/ Allow: /about/ Disallow: /vendors/Disallow: /js/Disallow: /css/Disallow: /fonts/Disallow: /vendors/Disallow: /fancybox/Sitemap: http://mtianyan.gitee.io/sitemap.xmlSitemap: http://mtianyan.gitee.io/baidusitemap.xml Allow后面的就是你的menu 可以在主题配置文件中找到。 前往链接：https://www.google.com/webmasters/添加你的网站。 下载验证文件放入hexo-site\source中 Tips: 站点配置文件忽略Google的验证文件。这样clean的时候就不会被删除了。 123skip_render: - README.md - google*****.html 打开站点地图：添加站点地图。 可以进入站点地图详情查看有没有报错。 robots.txt测试 确保0错误，0警告。 百度搜索资源平台http://ziyuan.baidu.com/ 点击用户中心。站点管理 进行 添加网站操作。 下载验证文件放入hexo-site\source中 验证完成之后点击域名进入控制台。 对于Robots文件进行验证。 点击链接提交，往下多翻点 选择sitemap：填入自己网站的sitemap地址。点击提交 查看状态。 页面关键字优化title 文件路径是your-hexo-site\themes\next\layout\index.swig 将文件中 1&#123;% block title %&#125;&#123;&#123; config.title &#125;&#125;&#123;% if theme.index_with_subtitle and config.subtitle %&#125; - &#123;&#123;config.subtitle &#125;&#125; 改为 1&#123;% block title %&#125;&#123;&#123; config.title &#125;&#125;&#123;% if theme.index_with_subtitle and config.subtitle %&#125; - &#123;&#123;config.subtitle &#125;&#125;&#123;% endif %&#125;&#123;&#123; theme.description &#125;&#125; &#123;% endblock %&#125;]]></content>
       <categories>
         <category>运维环境配置</category>
       </categories>
@@ -82,10 +82,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -96,10 +96,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -110,10 +110,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -124,10 +124,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -138,10 +138,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -152,10 +152,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -166,10 +166,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -180,10 +180,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -194,10 +194,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
