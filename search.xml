@@ -8,8 +8,8 @@
         <category>运维环境配置</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>环境搭建</tag>
+        <tag>Hexo</tag>
         <tag>TravisCI</tag>
       </tags>
   </entry>
@@ -66,7 +66,7 @@
   <entry>
     <title><![CDATA[程序员装机必备爆款软件推荐与配置(windows版)]]></title>
     <url>%2Fpost%2F9237fc73.html</url>
-    <content type="text"><![CDATA[做机也要做一只全能的机哦 值此新年来临之即，面对两百多个G的c盘。忍痛割爱将电脑系统重装，版本为(win10:1079)之后的所有电脑环境更新，专业软件安装均会记录在此文。 程序员装机必备爆款软件推荐与配置。 win10系统使用技巧 程序员装机必备爆款软件推荐与配置。编程软件篇sublimetextC:\software\Sublime Text 3 包管理地址: https://packagecontrol.io/installation Chinese Localization 汉化ctrl + shift + p 打开package install 安装插件Chinese Localization即可。 Theme - Afterglow 主题主题设置： Sublime Text -&gt; Preferences -&gt; Settings - User: 123456789101112&#123; &quot;color_scheme&quot;: &quot;Packages/Theme - Afterglow/Afterglow-twilight.tmTheme&quot;, &quot;ignored_packages&quot;: [ &quot;Vintage&quot; ], &quot;theme&quot;: &quot;Afterglow-blue.sublime-theme&quot;, &quot;tabs_small&quot;: true, &quot;sidebar_size_12&quot;: true, &quot;color_inactive_tabs&quot;: true, &quot;tabs_padding_small&quot;: true&#125; Markdown 插件必备 markdown preview markdown LivePrivew OmniMarkupPreviewer markdown_snippetshttps://praveenpuglia.com/github_markdown_snippets/ 自定义snippet设置(Tab补全) 加入快捷键pyb,快速创建代码块(Tab补全)+pyb 工具 -&gt; 插件开发 -&gt;新建代码片段 123456789&lt;snippet&gt; &lt;content&gt; 代码模板&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;pyb&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;scope&gt;text.html.markdown&lt;/scope&gt;&lt;/snippet&gt; 加入新建hexo博文的快捷模板(tab补全)+hexopy 123456789101112131415161718192021222324&lt;snippet&gt; &lt;content&gt;---title: $&#123;1:&#125;date: $&#123;2:&#125;tags:- Python- $&#123;3:&#125;- $&#123;4:&#125; categories: $&#123;5:python从入门到精通&#125;copyright: true ---&#123;% cq %&#125; $&#123;6:&#125; &#123;% endcq %&#125;&#123;% note %&#125; $&#123;7:&#125; &#123;% endnote %&#125;\&lt;!--more--&gt;\&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;hexopy&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;scope&gt;text.html.markdown&lt;/scope&gt;&lt;/snippet&gt; ctrl + shift +, sublime插入当前时间快捷键设置参考： https://stackoverflow.com/questions/11879481/can-i-add-date-time-for-sublime-snippet 加入直接插入当前时间的快捷键：ctrl + shift +, 新建插件: datetimestamp.py 1234567891011121314import datetime, getpassimport sublime, sublime_pluginclass AddDateTimeStampCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") &#125; )class AddDateStampCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d") &#125; )class AddTimeStampCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%H:%M:%S") &#125; ) 用户快捷键设置: 12345[&#123;&quot;keys&quot;: [&quot;shift+ctrl+,&quot;], &quot;command&quot;: &quot;add_date_time_stamp&quot; &#125;,&#123;&quot;keys&quot;: [&quot;shift+ctrl+.&quot;], &quot;command&quot;: &quot;add_date_stamp&quot; &#125;,&#123;&quot;keys&quot;: [&quot;shift+ctrl+/&quot;], &quot;command&quot;: &quot;add_time_stamp&quot; &#125;] sulimeTempel(新建文件模板)插件未完待续 设置python3环境默认python2环境为安装Python自动设置的。而python3环境则需要自行配置。 1234567&#123;&quot;encoding&quot;: &quot;utf-8&quot;, &quot;working_dir&quot;: &quot;$file_path&quot;, &quot;shell_cmd&quot;: &quot;D:\\softEnvDown\\Anaconda2\\envs\\py3\\python.exe -u \&quot;$file\&quot;&quot;, &quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;, &quot;selector&quot;: &quot;source.python&quot;&#125; cmder(替代windowscmd的神器)C:\greenSoft\cmder_mini cmder右键菜单添加，修改默认路径为桌面添加环境变量 在管理员权限下打开cmd，输入以下命令增加右键菜单 Cmder.exe /REGISTER ALL 选择Startup-Task，修改{cmd::Cmder}项，改为: cmd /k &quot;%ConEmuDir%\..\init.bat&quot; -new_console:d:C:\Users\mtian\Desktop 删除右键菜单(备用) 123456@echo off Reg delete &quot;HKEY_CLASSES_ROOT\Directory\Background\shell\Cmder&quot; /f pausecmd /k &quot;%ConEmuDir%\..\init.bat&quot; -new_console:%__CD_ 设置右键打开当前目录cmder Startup:specified named task shell::cmd cmd /k “%ConEmuDir%..\init.bat” -new_console:d:%CD% editplus安装C:\software\editplus 注册码：http://www.98key.com/editplus?sub=mtianyan VMware-workstationhttps://download3.vmware.com/software/wkst/file/VMware-workstation-full-14.1.0-7370693.exe xshell 5C:\software\Xshell 图床软件 mpicC:\greenSoft\MPic 2.2.1.3 java8u151http://www.oracle.com/technetwork/java/javase/downloads/ C:\softEnvir\java C:\softEnvir\java\jdk1.8.0_152\bin C:\softEnvir\java\jre1.8.0_152\bin eclipse-oxygen安装C:\software\eclipse\java-oxygen PyCharm 2017.3.2C:\Windows\System32\drivers\etc host文件 0.0.0.0 account.jetbrains.com 添加解释器： setting - Project Interpreter： 一直定位到python.exe点击确认。 普通软件chrome浏览器C:\Program Files (x86)\Google\Chrome\Application Shadowsocks &amp; kcptunoffice2016安装7zipC:\software\7-Zip Tim安装目录：C:\software\tim文件接收： C:\Users\mtian\Desktop聊天记录：C:\softData\QQuser C:\Users\mtian\OneDrive\Shadowsocks c盘绿色软件记录C:\greenSoft cmder pdf password 流程图 冰点文库 win10系统使用技巧win10开机启动项修改C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 去除右键windows denferwin +r regedithttps://jingyan.baidu.com/article/4b52d702ae79affc5c774be3.html 编程环境Python相关环境anaconda下载： https://repo.continuum.io/archive/ Anaconda2: D:\softEnvDown\Anaconda2\ Anaconda3: D:\softEnvDown\Anaconda2\envs\py3 注意: py3不是自己创建的新文件夹，而是在路径上打字指定。 Ruby环境C:\softEnvir\Ruby24-x64]]></content>
+    <content type="text"><![CDATA[做机也要做一只全能的机哦 值此新年来临之即，面对两百多个G的c盘。忍痛割爱将电脑系统重装，版本为(win10:1079)之后的所有电脑环境更新，专业软件安装均会记录在此文。 程序员装机必备爆款软件推荐与配置。 win10系统使用技巧 程序员装机必备爆款软件推荐与配置。编程软件篇sublimetextC:\software\Sublime Text 3 包管理地址: https://packagecontrol.io/installation Chinese Localization 汉化ctrl + shift + p 打开package install 安装插件Chinese Localization即可。 Theme - Afterglow 主题主题设置： Sublime Text -&gt; Preferences -&gt; Settings - User: 123456789101112&#123; &quot;color_scheme&quot;: &quot;Packages/Theme - Afterglow/Afterglow-twilight.tmTheme&quot;, &quot;ignored_packages&quot;: [ &quot;Vintage&quot; ], &quot;theme&quot;: &quot;Afterglow-blue.sublime-theme&quot;, &quot;tabs_small&quot;: true, &quot;sidebar_size_12&quot;: true, &quot;color_inactive_tabs&quot;: true, &quot;tabs_padding_small&quot;: true&#125; Markdown 插件必备 markdown preview markdown LivePrivew OmniMarkupPreviewer markdown_snippetshttps://praveenpuglia.com/github_markdown_snippets/ 自定义snippet设置(Tab补全) 加入快捷键pyb,快速创建代码块(Tab补全)+pyb 工具 -&gt; 插件开发 -&gt;新建代码片段 123456789&lt;snippet&gt; &lt;content&gt; 代码模板&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;pyb&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;scope&gt;text.html.markdown&lt;/scope&gt;&lt;/snippet&gt; 加入新建hexo博文的快捷模板(tab补全)+hexopy 123456789101112131415161718192021222324&lt;snippet&gt; &lt;content&gt;---title: $&#123;1:&#125;date: $&#123;2:&#125;tags:- Python- $&#123;3:&#125;- $&#123;4:&#125; categories: $&#123;5:python从入门到精通&#125;copyright: true ---&#123;% cq %&#125; $&#123;6:&#125; &#123;% endcq %&#125;&#123;% note %&#125; $&#123;7:&#125; &#123;% endnote %&#125;\&lt;!--more--&gt;\&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;hexopy&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;scope&gt;text.html.markdown&lt;/scope&gt;&lt;/snippet&gt; ctrl + shift +, sublime插入当前时间快捷键设置参考： https://stackoverflow.com/questions/11879481/can-i-add-date-time-for-sublime-snippet 加入直接插入当前时间的快捷键：ctrl + shift +, 新建插件: datetimestamp.py 1234567891011121314import datetime, getpassimport sublime, sublime_pluginclass AddDateTimeStampCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") &#125; )class AddDateStampCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d") &#125; )class AddTimeStampCommand(sublime_plugin.TextCommand): def run(self, edit): self.view.run_command("insert_snippet", &#123; "contents": "%s" % datetime.datetime.now().strftime("%H:%M:%S") &#125; ) 用户快捷键设置: 12345[&#123;&quot;keys&quot;: [&quot;shift+ctrl+,&quot;], &quot;command&quot;: &quot;add_date_time_stamp&quot; &#125;,&#123;&quot;keys&quot;: [&quot;shift+ctrl+.&quot;], &quot;command&quot;: &quot;add_date_stamp&quot; &#125;,&#123;&quot;keys&quot;: [&quot;shift+ctrl+/&quot;], &quot;command&quot;: &quot;add_time_stamp&quot; &#125;] sulimeTempel(新建文件模板)插件未完待续 设置python3环境默认python2环境为安装Python自动设置的。而python3环境则需要自行配置。 1234567&#123;&quot;encoding&quot;: &quot;utf-8&quot;, &quot;working_dir&quot;: &quot;$file_path&quot;, &quot;shell_cmd&quot;: &quot;D:\\softEnvDown\\Anaconda2\\envs\\py3\\python.exe -u \&quot;$file\&quot;&quot;, &quot;file_regex&quot;: &quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;, &quot;selector&quot;: &quot;source.python&quot;&#125; Python.sublime-settings用来替换Tab为4个空格。 1234&#123; &quot;tab_size&quot;: 4, &quot;translate_tabs_to_spaces&quot;: true&#125; Anaconda Python代码补全PEP8规范检查弹窗报错。 修改首选项-&gt;package setting -&gt; Anaconda -&gt; setting -default 123456 &quot;test_params&quot;: &#123; &quot;current_file_tests&quot;: &quot;&quot;, &quot;current_test&quot;: &quot;&quot;, &quot;project_tests&quot;: &quot;&quot; &#125;,&quot;swallow_startup_errors&quot;: true, Python PEP8 autoformatctrl + shift + R AutoFileNamecmder(替代windowscmd的神器)C:\greenSoft\cmder_mini cmder右键菜单添加，修改默认路径为桌面添加环境变量 在管理员权限下打开cmd，输入以下命令增加右键菜单 Cmder.exe /REGISTER ALL 选择Startup-Task，修改{cmd::Cmder}项，改为: cmd /k &quot;%ConEmuDir%\..\init.bat&quot; -new_console:d:C:\Users\mtian\Desktop 删除右键菜单(备用) 123456@echo off Reg delete &quot;HKEY_CLASSES_ROOT\Directory\Background\shell\Cmder&quot; /f pausecmd /k &quot;%ConEmuDir%\..\init.bat&quot; -new_console:%__CD_ 设置右键打开当前目录cmder Startup:specified named task shell::cmd cmd /k “%ConEmuDir%..\init.bat” -new_console:d:%CD% editplus安装C:\software\editplus 注册码：http://www.98key.com/editplus?sub=mtianyan VMware-workstationhttps://download3.vmware.com/software/wkst/file/VMware-workstation-full-14.1.0-7370693.exe xshell 5C:\software\Xshell 图床软件 mpicC:\greenSoft\MPic 2.2.1.3 java8u151http://www.oracle.com/technetwork/java/javase/downloads/ C:\softEnvir\java C:\softEnvir\java\jdk1.8.0_152\bin C:\softEnvir\java\jre1.8.0_152\bin eclipse-oxygen安装C:\software\eclipse\java-oxygen PyCharm 2017.3.2C:\Windows\System32\drivers\etc host文件 0.0.0.0 account.jetbrains.com 添加解释器： setting - Project Interpreter： 一直定位到python.exe点击确认。 普通软件chrome浏览器C:\Program Files (x86)\Google\Chrome\Application Shadowsocks &amp; kcptunoffice2016安装7zipC:\software\7-Zip Tim安装目录：C:\software\tim文件接收： C:\Users\mtian\Desktop聊天记录：C:\softData\QQuser C:\Users\mtian\OneDrive\Shadowsocks c盘绿色软件记录C:\greenSoft cmder pdf password 流程图 冰点文库 win10系统使用技巧win10开机启动项修改C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp 去除右键windows denferwin +r regedithttps://jingyan.baidu.com/article/4b52d702ae79affc5c774be3.html 编程环境Python相关环境anaconda下载： https://repo.continuum.io/archive/ Anaconda2: D:\softEnvDown\Anaconda2\ Anaconda3: D:\softEnvDown\Anaconda2\envs\py3 注意: py3不是自己创建的新文件夹，而是在路径上打字指定。 Ruby环境C:\softEnvir\Ruby24-x64]]></content>
       <categories>
         <category>运维环境配置</category>
       </categories>
@@ -82,10 +82,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -96,10 +96,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -110,10 +110,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -124,10 +124,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -138,10 +138,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -152,10 +152,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -166,10 +166,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -180,10 +180,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -194,10 +194,10 @@
         <category>Scrapy分布式爬虫打造搜索引擎</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
         <tag>搜索引擎</tag>
         <tag>Scrapy</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
